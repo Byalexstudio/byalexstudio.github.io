@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ByAlex · AI Video Production · South Florida</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --gold:#C9A84C;--gold-light:#E2C97E;--gold-dim:#7A5C20;
+  --ink:#0A0A0A;--ink-soft:#111;
+  --text-muted:#888;--text-dim:#555;
+  --border-gold:rgba(201,168,76,0.25);
+}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:#E8E0D0;font-family:'Jost',sans-serif;font-weight:300;font-size:14px;overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0.9rem 2rem;border-bottom:1px solid var(--border-gold);background:rgba(10,10,10,0.97)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--gold);letter-spacing:0.15em;text-transform:uppercase;font-weight:400}
+.nav-links{display:flex;gap:2rem}
+.nav-links a{font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);text-decoration:none}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.45rem 1.1rem;border:1px solid var(--gold);color:var(--gold);background:transparent;text-decoration:none}
+.nav-cta:hover{background:var(--gold);color:var(--ink)}
+
+.hero{padding:6rem 2rem 3rem;text-align:center;background:radial-gradient(ellipse 70% 60% at 50% 0%, rgba(201,168,76,0.07) 0%, transparent 70%)}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border-gold);padding:0.35rem 1rem;margin-bottom:1.2rem}
+.hero-badge::before{content:'';width:5px;height:5px;background:var(--gold);border-radius:50%;animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,6vw,4.5rem);font-weight:300;line-height:1.05;color:#F0EAD8;margin-bottom:0.6rem}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:var(--text-muted);margin-bottom:1rem}
+.hero-desc{font-size:0.88rem;line-height:1.7;color:#999;max-width:520px;margin:0 auto 1.8rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.2rem}
+.btn-primary{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.75rem 2rem;background:var(--gold);color:var(--ink);border:none;text-decoration:none;font-weight:500}
+.btn-primary:hover{background:var(--gold-light)}
+.btn-ghost{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;padding:0.75rem 2rem;background:transparent;color:#E8E0D0;border:1px solid rgba(255,255,255,0.2);text-decoration:none}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.lang-tag{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);opacity:0.7}
+
+.proof-bar{display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap;padding:1.5rem 2rem;border-top:1px solid var(--border-gold);border-bottom:1px solid var(--border-gold);background:rgba(201,168,76,0.03)}
+.proof-num{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--gold);line-height:1}
+.proof-label{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dim);margin-top:0.15rem}
+
+.video-section{padding:3rem 2rem;text-align:center;background:var(--ink-soft)}
+.sec-label{font-size:0.62rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:0.5rem}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;color:#F0EAD8;margin-bottom:0.6rem;line-height:1.15}
+.sec-title em{font-style:italic;color:var(--gold)}
+.divider{width:40px;height:1px;background:var(--gold);margin:1rem auto;opacity:0.5}
+.divider-left{width:40px;height:1px;background:var(--gold);margin:1rem 0;opacity:0.5}
+
+.video-frame-wrap{max-width:340px;margin:2rem auto 0;border:1px solid var(--border-gold);box-shadow:0 0 40px rgba(201,168,76,0.08)}
+.video-frame-wrap video{display:block;width:100%;background:#000}
+.video-label{margin-top:0.8rem;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-dim)}
+.video-label em{color:var(--gold);font-style:normal}
+
+section{padding:3rem 2rem}
+.sec-body{font-size:0.85rem;line-height:1.8;color:#888;max-width:560px}
+
+.how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));border:1px solid var(--border-gold);margin-top:2rem}
+.how-step{padding:1.6rem 1.4rem;border-right:1px solid var(--border-gold)}
+.how-step:last-child{border-right:none}
+.how-step:hover{background:rgba(201,168,76,0.04)}
+.step-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;color:rgba(201,168,76,0.15);line-height:1;margin-bottom:0.6rem}
+.step-title{font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;color:#D4C9B0;margin-bottom:0.4rem}
+.step-desc{font-size:0.78rem;line-height:1.6;color:var(--text-muted)}
+
+.niches-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));border:1px solid var(--border-gold);margin-top:2rem}
+.niche-card{padding:1.5rem;border-right:1px solid var(--border-gold);border-bottom:1px solid var(--border-gold)}
+.niche-card:hover{background:rgba(201,168,76,0.04)}
+.niche-icon{font-size:1.3rem;margin-bottom:0.5rem}
+.niche-name{font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;color:#D4C9B0;margin-bottom:0.3rem}
+.niche-detail{font-size:0.78rem;line-height:1.5;color:var(--text-muted)}
+
+.pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border-gold);border:1px solid var(--border-gold);margin-top:2rem}
+.pkg-card{background:var(--ink);padding:2rem 1.5rem;display:flex;flex-direction:column}
+.pkg-card:hover{background:rgba(201,168,76,0.04)}
+.pkg-card.featured{background:rgba(201,168,76,0.06)}
+.pkg-badge{font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border-gold);padding:0.25rem 0.7rem;width:fit-content;margin-bottom:1rem}
+.pkg-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:#F0EAD8;margin-bottom:0.2rem}
+.pkg-price{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--gold);line-height:1;margin-bottom:0.2rem}
+.pkg-price span{font-size:1rem;vertical-align:super}
+.pkg-mo{font-size:0.62rem;letter-spacing:0.18em;color:var(--text-dim);text-transform:uppercase;margin-bottom:1.2rem}
+.pkg-divider{height:1px;background:var(--border-gold);margin-bottom:1rem}
+.pkg-features{list-style:none;flex:1}
+.pkg-features li{font-size:0.78rem;line-height:1.5;color:#999;padding:0.3rem 0;display:flex;gap:0.5rem}
+.pkg-features li::before{content:'—';color:var(--gold-dim);flex-shrink:0}
+.pkg-cta{display:block;text-align:center;font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;padding:0.7rem;margin-top:1.5rem;border:1px solid var(--border-gold);color:#D4C9B0;text-decoration:none}
+.pkg-cta:hover,.pkg-card.featured .pkg-cta{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+
+.quote-section{text-align:center;padding:2.5rem 3rem;border-top:1px solid var(--border-gold);border-bottom:1px solid var(--border-gold)}
+.quote-mark{font-family:'Cormorant Garamond',serif;font-size:4rem;line-height:0.5;color:var(--gold);opacity:0.25;margin-bottom:1rem}
+.quote-text{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2vw,1.5rem);font-style:italic;color:#D4C9B0;max-width:600px;margin:0 auto 1rem;line-height:1.5}
+.quote-author{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold)}
+
+.cta-section{text-align:center;padding:3.5rem 2rem;background:radial-gradient(ellipse 60% 50% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%)}
+.cta-section .sec-title{margin:0 auto 0.8rem;max-width:600px}
+.cta-section p{font-size:0.85rem;color:#888;margin-bottom:1.8rem;line-height:1.7}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.cta-contact{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+.contact-label{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.3rem}
+.contact-val{font-size:0.82rem;color:var(--gold)}
+
+footer{padding:1.5rem 2rem;border-top:1px solid var(--border-gold);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:0.9rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase}
+footer p{font-size:0.65rem;letter-spacing:0.08em;color:var(--text-dim)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">ByAlex</div>
+  <div class="nav-links">
+    <a href="#demo">Demo</a>
+    <a href="#services">Services</a>
+    <a href="#packages">Packages</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Get Started</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">AI Video Production · South Florida</div>
+  <h1>Video content that<br><em>grows</em> your<br>business</h1>
+  <p class="hero-sub">Professional AI-powered production in English, Spanish or bilingual</p>
+  <p class="hero-desc">Premium monthly video content for restaurants, spas, gyms, and health clinics across Broward County — created with AI, delivered every month.</p>
+  <div class="hero-actions">
+    <a href="#demo" class="btn-primary">Watch Demo</a>
+    <a href="#contact" class="btn-ghost">Talk to Alexandra</a>
+  </div>
+  <div class="lang-tag">🇺🇸 English · 🇪🇸 Español · Bilingual</div>
+</div>
+
+<div class="proof-bar">
+  <div><div class="proof-num">12+</div><div class="proof-label">Videos / month</div></div>
+  <div><div class="proof-num">24h</div><div class="proof-label">Delivery time</div></div>
+  <div><div class="proof-num">3</div><div class="proof-label">Languages</div></div>
+  <div><div class="proof-num">100%</div><div class="proof-label">AI Production</div></div>
+</div>
+
+<div class="video-section" id="demo">
+  <div class="sec-label">Real Example</div>
+  <h2 class="sec-title">This is what an<br><em>AI video looks like</em></h2>
+  <div class="divider"></div>
+  <div class="video-frame-wrap">
+    <video controls autoplay muted loop playsinline>
+      <source src="summer_girl.mp4" type="video/mp4">
+    </video>
+  </div>
+  <p class="video-label">Consistent AI character · <em>Summer Girl</em> · Produced by ByAlex</p>
+</div>
+
+<section id="services">
+  <div class="sec-label">How It Works</div>
+  <h2 class="sec-title">From idea to <em>video</em> in hours</h2>
+  <div class="divider-left"></div>
+  <p class="sec-body">A streamlined professional workflow that turns your message into scroll-stopping content for social media.</p>
+  <div class="how-grid">
+    <div class="how-step"><div class="step-num">01</div><div class="step-title">Brief</div><div class="step-desc">We learn your business, tone and goals in 15 min over WhatsApp.</div></div>
+    <div class="how-step"><div class="step-num">02</div><div class="step-title">Script</div><div class="step-desc">15–30 second scripts crafted for your niche and audience.</div></div>
+    <div class="how-step"><div class="step-num">03</div><div class="step-title">AI Production</div><div class="step-desc">Characters, voice, clips and editing using the best AI stack.</div></div>
+    <div class="how-step"><div class="step-num">04</div><div class="step-title">Delivery</div><div class="step-desc">Videos ready for Instagram, TikTok, Facebook or your website.</div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-label">Industries</div>
+  <h2 class="sec-title">We create for your<br><em>type of business</em></h2>
+  <div class="divider-left"></div>
+  <div class="niches-grid">
+    <div class="niche-card"><div class="niche-icon">🍽️</div><div class="niche-name">Restaurants & Food</div><div class="niche-detail">Dishes, daily specials, ambiance and dining experiences.</div></div>
+    <div class="niche-card"><div class="niche-icon">💆</div><div class="niche-name">Spas & Beauty</div><div class="niche-detail">Luxury, relaxation and promos that drive bookings.</div></div>
+    <div class="niche-card"><div class="niche-icon">🏋️</div><div class="niche-name">Gyms & Fitness</div><div class="niche-detail">Classes, transformations and offers with high energy.</div></div>
+    <div class="niche-card"><div class="niche-icon">🩺</div><div class="niche-name">Health & Wellness</div><div class="niche-detail">Clinics and wellness centers. Trust and authority in every video.</div></div>
+  </div>
+</section>
+
+<section id="packages" style="background:var(--ink-soft)">
+  <div class="sec-label">Packages</div>
+  <h2 class="sec-title">Choose your <em>monthly plan</em></h2>
+  <div class="divider-left"></div>
+  <div class="pkg-grid">
+    <div class="pkg-card">
+      <div class="pkg-name">Basic</div>
+      <div class="pkg-price"><span>$</span>500</div>
+      <div class="pkg-mo">per month</div>
+      <div class="pkg-divider"></div>
+      <ul class="pkg-features">
+        <li>4 videos per month</li>
+        <li>Up to 30 seconds each</li>
+        <li>English, Spanish or bilingual</li>
+        <li>Consistent AI characters</li>
+        <li>Ready for social media</li>
+      </ul>
+      <a href="#contact" class="pkg-cta">Get Started</a>
+    </div>
+    <div class="pkg-card featured">
+      <div class="pkg-badge">Most popular</div>
+      <div class="pkg-name">Standard</div>
+      <div class="pkg-price"><span>$</span>900</div>
+      <div class="pkg-mo">per month</div>
+      <div class="pkg-divider"></div>
+      <ul class="pkg-features">
+        <li>8 videos per month</li>
+        <li>Copy & captions included</li>
+        <li>English, Spanish or bilingual</li>
+        <li>Consistent characters & voice</li>
+        <li>Revisions included</li>
+      </ul>
+      <a href="#contact" class="pkg-cta">Get Started</a>
+    </div>
+    <div class="pkg-card">
+      <div class="pkg-name">Premium</div>
+      <div class="pkg-price"><span>$</span>1,500</div>
+      <div class="pkg-mo">per month</div>
+      <div class="pkg-divider"></div>
+      <ul class="pkg-features">
+        <li>12 videos per month</li>
+        <li>Content strategy included</li>
+        <li>Full copy & captions</li>
+        <li>Editorial calendar</li>
+        <li>All formats & platforms</li>
+        <li>Priority support</li>
+      </ul>
+      <a href="#contact" class="pkg-cta">Get Started</a>
+    </div>
+  </div>
+</section>
+
+<div class="quote-section">
+  <div class="quote-mark">"</div>
+  <p class="quote-text">Your business deserves content that communicates, connects and converts — without needing a full production team.</p>
+  <div class="quote-author">Alexandra · Actress, Screenwriter & Producer · Hollywood, FL</div>
+</div>
+
+<section class="cta-section" id="contact">
+  <div class="sec-label">Contact</div>
+  <h2 class="sec-title">Ready to start?<br>Message me <em>today</em></h2>
+  <p>Tell me about your business and I'll have a custom proposal ready in 24 hours.<br>No commitment. No complications.</p>
+  <div class="cta-btns">
+    <a href="mailto:alexandragrasty@outlook.com" class="btn-primary">Send Message</a>
+  </div>
+  <div class="cta-contact">
+    <div><div class="contact-label">Service area</div><div class="contact-val">Broward County, South Florida</div></div>
+    <div><div class="contact-label">Email</div><div class="contact-val">alexandragrasty@outlook.com</div></div>
+    <div><div class="contact-label">Languages</div><div class="contact-val">English · Español · Bilingual</div></div>
+    <div><div class="contact-label">Response time</div><div class="contact-val">Under 24 hours</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">ByAlex</div>
+  <p>© 2026 · Hollywood, Florida · Broward County</p>
+</footer>
+
+</body>
+</html>
