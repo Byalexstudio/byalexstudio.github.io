@@ -105,6 +105,13 @@ section{padding:3rem 2rem}
 footer{padding:1.5rem 2rem;border-top:1px solid var(--border-gold);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:0.9rem;letter-spacing:0.15em;color:var(--gold);text-transform:uppercase}
 footer p{font-size:0.65rem;letter-spacing:0.08em;color:var(--text-dim)}
+
+.video-gallery{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.5rem;margin-top:2rem;max-width:1000px;margin-left:auto;margin-right:auto;
+}
+.video-item{display:flex;flex-direction:column;align-items:center}
+.video-item .video-frame-wrap{width:100%;max-width:300px}
 </style>
 </head>
 <body>
@@ -140,15 +147,35 @@ footer p{font-size:0.65rem;letter-spacing:0.08em;color:var(--text-dim)}
 </div>
 
 <div class="video-section" id="demo">
-  <div class="sec-label">Real Example</div>
-  <h2 class="sec-title">This is what an<br><em>AI video looks like</em></h2>
+  <div class="sec-label">Real Examples</div>
+  <h2 class="sec-title">This is what our<br><em>AI videos look like</em></h2>
   <div class="divider"></div>
-  <div class="video-frame-wrap">
-    <video controls autoplay muted loop playsinline>
-      <source src="Summer_Girl.mp4" type="video/mp4">
-    </video>
+  <div class="video-gallery">
+    <div class="video-item">
+      <div class="video-frame-wrap">
+        <video controls muted loop playsinline>
+          <source src="Summer_Girl.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p class="video-label">🌴 <em>Lifestyle & Food</em></p>
+    </div>
+    <div class="video-item">
+      <div class="video-frame-wrap">
+        <video controls muted loop playsinline>
+          <source src="Spa.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p class="video-label">💆 <em>Spa & Beauty</em></p>
+    </div>
+    <div class="video-item">
+      <div class="video-frame-wrap">
+        <video controls muted loop playsinline>
+          <source src="RealEstate.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p class="video-label">🏠 <em>Real Estate</em></p>
+    </div>
   </div>
-  <p class="video-label">Consistent AI character · <em>Summer Girl</em> · Produced by ByAlex</p>
 </div>
 
 <section id="services">
