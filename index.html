@@ -123,6 +123,37 @@ footer p{font-size:0.65rem;letter-spacing:0.08em;color:var(--text-dim)}
   box-shadow:0 0 60px rgba(201,168,76,0.12);
 }
 .hero-video-wrap video{display:block;width:100%;background:#000}
+
+@media (max-width: 768px) {
+  nav { padding: 0.8rem 1rem; }
+  .nav-links { display: none; }
+  .hero { padding: 5rem 1.2rem 2.5rem; }
+  .hero h1 { font-size: 2.2rem; }
+  .proof-bar { gap: 1.5rem; padding: 1.2rem 1rem; }
+  .how-grid { grid-template-columns: 1fr 1fr; }
+  .how-step { border-bottom: 1px solid var(--border-gold); }
+  .niches-grid { grid-template-columns: 1fr 1fr; }
+  .pkg-grid { grid-template-columns: 1fr !important; gap: 1px; }
+  .pkg-card { padding: 1.8rem 1.4rem; }
+  .video-gallery { grid-template-columns: 1fr !important; }
+  .hero-video-wrap { max-width: 100%; }
+  .quote-section { padding: 2rem 1.2rem; }
+  .cta-section { padding: 2.5rem 1.2rem; }
+  .cta-contact { gap: 1.5rem; }
+  section { padding: 2.5rem 1.2rem; }
+  .video-section { padding: 2.5rem 1.2rem; }
+  .hero-video-section { padding: 2.5rem 1.2rem; }
+  footer { padding: 1.2rem 1rem; flex-direction: column; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .how-grid { grid-template-columns: 1fr; }
+  .niches-grid { grid-template-columns: 1fr; }
+  .niche-card { border-right: none; }
+  .hero-actions { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-ghost { width: 100%; text-align: center; }
+  .proof-bar { gap: 1rem; }
+}
 </style>
 </head>
 <body>
