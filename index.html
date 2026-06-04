@@ -112,6 +112,17 @@ footer p{font-size:0.65rem;letter-spacing:0.08em;color:var(--text-dim)}
 }
 .video-item{display:flex;flex-direction:column;align-items:center}
 .video-item .video-frame-wrap{width:100%;max-width:300px}
+
+.hero-video-section{
+  padding:3rem 2rem;text-align:center;
+  background:radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);
+}
+.hero-video-wrap{
+  max-width:400px;margin:2rem auto 0;
+  border:1px solid var(--border-gold);
+  box-shadow:0 0 60px rgba(201,168,76,0.12);
+}
+.hero-video-wrap video{display:block;width:100%;background:#000}
 </style>
 </head>
 <body>
@@ -144,6 +155,17 @@ footer p{font-size:0.65rem;letter-spacing:0.08em;color:var(--text-dim)}
   <div><div class="proof-num">24h</div><div class="proof-label">Delivery time</div></div>
   <div><div class="proof-num">3</div><div class="proof-label">Languages</div></div>
   <div><div class="proof-num">100%</div><div class="proof-label">AI Production</div></div>
+</div>
+
+<div class="hero-video-section">
+  <div class="sec-label">Our Story</div>
+  <h2 class="sec-title">Meet <em>ByAlex</em></h2>
+  <div class="divider"></div>
+  <div class="hero-video-wrap">
+    <video controls muted loop playsinline>
+      <source src="By Alex2.mp4" type="video/mp4">
+    </video>
+  </div>
 </div>
 
 <div class="video-section" id="demo">
